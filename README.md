@@ -3,9 +3,7 @@ This repository is part of my ongoing project to build a 3-DOF quadruped robot f
 Before writing any ROS2 or control code, I wanted to fully understand the mathematics driving the robot — so I built the kinematics layer from first principles: rotation matrices, homogeneous transforms, forward kinematics, and inverse kinematics.
 
 Reference — the leg this work is based on:
-<p align="center">
-  <img src="images/leg.jpeg" width="320" alt="3-DOF quadruped leg reference"/>
-</p>
+![Reference](leg.jpeg)
 
 
 Kinematic Chain
