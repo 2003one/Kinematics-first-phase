@@ -26,9 +26,7 @@ Each joint is one homogeneous transformation matrix (4×4).
 Chain them together and the last column gives the foot position (x, y, z).
 Tfoot=Thip_abduction×Thip_flexion×TkneeT_{foot} = T_{hip\_abduction} \times T_{hip\_flexion} \times T_{knee}Tfoot​=Thip_abduction​×Thip_flexion​×Tknee​
 Three different leg configurations visualised:
-<p align="center">
-  <img src="images/forward_kinematics.png" width="800" alt="FK 3 configurations"/>
-</p>
+![Forward](forward_kinematics.png)
 
 2. Inverse Kinematics — inverse_kinematics.ipynb
 
@@ -37,9 +35,7 @@ Given a desired foot position → find the joint angles
 Solved analytically in 3 steps:
 StepFormulaSolves1θ₁ = atan2(y, x)Hip abduction — which direction the leg points2d = √(r² + h²)Project to 2D sagittal plane3θ₃ = arccos((d²−L₂²−L₃²) / 2L₂L₃)Knee angle via cosine rule4θ₂ = atan2(−h, r) − atan2(L₃sinθ₃, L₂+L₃cosθ₃)Hip flexion
 IK output verified by feeding results back into FK — error < 1e-6 on all test cases.
-<p align="center">
-  <img src="images/inverse_kinematics.png" width="800" alt="IK verification"/>
-</p>
+![Inverse](inverse_kinematics.png)
 
 3. URDF — urdf/leg.urdf
 Standard ROS2-compatible URDF with proper joint limits, inertial properties, and Gazebo colour tags. Ready to drop into a ROS2 workspace.
